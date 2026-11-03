@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#18181B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="description" content="Material de cada video listo para copiar, comunidad de WhatsApp, ideas y venta de cursos.">
+  <title>CREATOR HUB PRO</title>
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23151a56'/><rect x='12' y='18' width='40' height='28' rx='8' fill='%23fff'/><path d='M28 25v14l12-7z' fill='%23151a56'/><circle cx='50' cy='48' r='9' fill='%2318181b'/><path d='M46 48h8M50 44v8' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/></svg>">
+  <!--
+    Desarrollado por FerPaul — https://ferpaul.com · https://www.youtube.com/@ferpaul · https://academy.ferpaul.com
+
+    MÁSCARA DE CREATOR HUB PRO PARA GITHUB PAGES (githubindex.html)
+    ─────────────────────────────────────────────────────────
+    Muestra el sistema de Apps Script en una dirección propia y limpia, sin la barra
+    "Esta aplicación fue creada por un usuario de Google Apps Script", y sin perder velocidad
+    (el sistema se carga directo, la máscara solo lo enmarca).
+
+    1. En Apps Script: Implementar › Nueva implementación › Aplicación web.
+       Ejecutar como: Yo · Quién tiene acceso: Cualquier persona. Copie la URL (termina en /exec).
+    2. Pegue esa URL abajo, en URL_APP.
+    3. Cree un repositorio en GitHub y suba ESTE archivo con el nombre index.html (rama main).
+    4. Settings › Pages › Source: "Deploy from a branch" · Branch: main · carpeta / (root) · Save.
+    5. En 1 o 2 minutos GitHub le da la dirección: https://SU-USUARIO.github.io/SU-REPO/
+       Esa es la dirección que se comparte (también se puede instalar en el celular).
+    6. En el sistema: Configuración › Negocio › "Enlace para ingresar" = esa dirección
+       (así los correos de acceso de los usuarios nuevos llevan el enlace limpio).
+
+    Si vuelve a implementar con "Nueva implementación", la URL /exec cambia: actualícela aquí.
+    Con "Administrar implementaciones › Editar › Nueva versión" la URL se mantiene.
+    Los parámetros de la dirección (?algo=valor) pasan tal cual al sistema.
+    El Code.gs del sistema debe tener PERMITIR_IFRAME = true (si no, Google bloquea el marco).
+  -->
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #18181B; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    #app { position: fixed; inset: 0; border: 0; width: 100%; height: 100vh; height: 100dvh; display: block; background: #F6F6F7; }
+    #cargando { position: fixed; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #FFFFFF;
+      background: radial-gradient(circle at 85% 0%, #151A56 -35%, #18181B 55%); transition: opacity .35s; }
+    #cargando.listo { opacity: 0; pointer-events: none; }
+    .logo { width: 74px; height: 74px; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .6); }
+    .logo img { width: 100%; height: 100%; display: block; }
+    .marca { font-size: 20px; font-weight: 800; letter-spacing: .5px; text-align: center; padding: 0 20px; }
+    .lema { font-size: 13px; color: #D4D4D8; text-align: center; padding: 0 20px; }
+    .barra { width: 180px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .14); overflow: hidden; margin-top: 6px; }
+    .barra span { display: block; width: 40%; height: 100%; background: #FFFFFF; border-radius: 4px; animation: avance 1.1s ease-in-out infinite; }
+    @keyframes avance { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+    #configurar { display: none; position: fixed; inset: 0; z-index: 3; overflow: auto; background: #F6F6F7; }
+    #configurar div { max-width: 560px; margin: 10vh auto; padding: 26px; background: #FFFFFF; border-radius: 16px; color: #18181B; line-height: 1.55;
+      box-shadow: 0 16px 32px -8px rgba(24, 24, 27, .18); border-top: 4px solid #151A56; }
+    #configurar h1 { font-size: 18px; margin: 0 0 8px; }
+    #configurar code { background: #EEF0F6; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div id="cargando">
+    <div class="logo"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23151a56'/><rect x='12' y='18' width='40' height='28' rx='8' fill='%23fff'/><path d='M28 25v14l12-7z' fill='%23151a56'/><circle cx='50' cy='48' r='9' fill='%2318181b'/><path d='M46 48h8M50 44v8' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/></svg>" alt=""></div>
+    <div class="marca">CREATOR HUB PRO</div>
+    <div class="lema">Contenido · comunidad · cursos</div>
+    <div class="barra"><span></span></div>
+  </div>
+  <iframe id="app" title="CREATOR HUB PRO" allow="camera; microphone; clipboard-read; clipboard-write; fullscreen; web-share" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div id="configurar">
+    <div>
+      <h1>Falta la URL del sistema</h1>
+      <p>Edite este archivo y pegue en <code>URL_APP</code> la dirección de su implementación de Apps Script
+        (Implementar › Administrar implementaciones › URL de la aplicación web, termina en <code>/exec</code>).</p>
+      <p>La implementación debe ejecutarse como <b>Yo</b> y tener acceso <b>Cualquier persona</b>.</p>
+    </div>
+  </div>
+  <script>
+    // ▼▼▼ PEGUE AQUÍ LA URL DE SU SISTEMA (termina en /exec) ▼▼▼
+    var URL_APP = 'https://script.google.com/macros/s/AKfycby9I7pGdJjVAdQUFEwzNyoW_qESoKZnwBCxVvVZoSl9o0HJS5mqnkonjJQcTj2C2dbl/exec';
+    // ▲▲▲───────────────────────────────────────────────────▲▲▲
+    var marco = document.getElementById('app'), cargando = document.getElementById('cargando');
+    var listo = function () { cargando.className = 'listo'; };
+    if (URL_APP.indexOf('PEGA_AQUI') !== -1 || URL_APP.indexOf('/exec') === -1) {
+      marco.style.display = 'none'; cargando.style.display = 'none';
+      document.getElementById('configurar').style.display = 'block';
+    } else {
+      var destino = new URL(URL_APP);                                    // reenvía los parámetros de la dirección al sistema
+      new URLSearchParams(window.location.search).forEach(function (v, k) { destino.searchParams.set(k, v); });
+      marco.addEventListener('load', listo);
+      setTimeout(listo, 9000);
+      marco.src = destino.toString();
+    }
+  </script>
+</body>
+</html>
